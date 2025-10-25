@@ -1,18 +1,88 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-/* Common styles */
-@import url('./reset.css');
-@import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
+.form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 20px;
+}
+.gallery {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+.gallery-item {
+  flex-basis: calc((100% - 3 * 24px) / 4);
+  max-width: 360px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #fff;
+}
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+@media screen and (max-width: 1200px) {
+  .gallery-item {
+    flex-basis: calc((100% - 2 * 24px) / 3);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .gallery-item {
+    flex-basis: calc((100% - 1 * 24px) / 2);
+  }
+}
+.gallery-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.info {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 8px;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.info-item b {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.loader-wrapper {
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.loader.is-hidden {
+  display: none;
+}
+.loader {
+  color: #fff;
+  display: inline-block;
+  font-size: 34px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}

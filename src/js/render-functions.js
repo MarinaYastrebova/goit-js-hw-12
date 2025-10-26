@@ -11,11 +11,14 @@ const lightbox = new SimpleLightbox('.gallery a', {
 });
 
 function createMarkup(image) {
-  const limitedTags = image.tags.split(',').slice(0, 3).join(',');
+  const limitedTags = image.tags
+    .split(',')
+    .map(tag => tag.trim())
+    .slice(0, 3)
+    .join(', ');
   return `
   <li class="gallery-item">
-    <a class="gallery-link" href="${image.largeImageURL}" 
-    data-alt="${limitedTags}">  
+    <a class="gallery-link" href="${image.largeImageURL}"  data-alt="${limitedTags}">  
         <img
             class="gallery-image"
             src="${image.webformatURL}"
@@ -58,8 +61,12 @@ export function hideLoader() {
   }
 }
 export function showLoadMoreBtn() {
-  loadMoreBtn.classList.remove('is-hidden');
+  if (loadMoreBtn) {
+    loadMoreBtn.classList.remove('is-hidden');
+  }
 }
 export function hideLoadMoreBtn() {
-  loadMoreBtn.classList.add('is-hidden');
+  if (loadMoreBtn) {
+    loadMoreBtn.classList.add('is-hidden');
+  }
 }

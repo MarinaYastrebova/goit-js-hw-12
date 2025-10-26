@@ -17,6 +17,7 @@ export async function getImagesByQuery(query, page = 1) {
     const response = await axios.get(`${BASE_URL}?${searchParams}`);
     return response.data;
   } catch (error) {
-    throw new Error(error.response?.data || error.message);
+    console.error('Error fetching images from Pixabay:', error);
+    throw new Error('Failed to fetch images from Pixabay.');
   }
 }

@@ -72,7 +72,7 @@ async function handleSubmit(event) {
       hideLoadMoreBtn();
       iziToast.info({
         message: `We're sorry, but you've reached the end of search results.`,
-        position: 'topRight',
+        position: 'bottomCenter',
         timeout: 5000,
       });
     }
@@ -107,7 +107,7 @@ async function handleClick() {
       hideLoadMoreBtn();
       iziToast.info({
         message: `We're sorry, but you've reached the end of search results.`,
-        position: 'topRight',
+        position: 'bottomCenter',
         timeout: 5000,
       });
     }

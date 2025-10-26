@@ -6,7 +6,7 @@ const loader = document.querySelector('.loader');
 const loadMoreBtn = document.querySelector('.load-more-btn');
 
 const lightbox = new SimpleLightbox('.gallery a', {
-  captionData: 'alt',
+  captionsData: 'alt',
   captionDelay: 250,
 });
 
@@ -18,7 +18,7 @@ function createMarkup(image) {
     .join(', ');
   return `
   <li class="gallery-item">
-    <a class="gallery-link" href="${image.largeImageURL}"  data-alt="${limitedTags}">  
+    <a class="gallery-link" href="${image.largeImageURL}" >  
         <img
             class="gallery-image"
             src="${image.webformatURL}"
